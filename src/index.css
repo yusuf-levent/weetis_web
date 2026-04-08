@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f8f5ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 500px at 10% 10%, rgba(232, 121, 249, 0.16), transparent 62%),
+    radial-gradient(900px 420px at 90% 0%, rgba(167, 139, 250, 0.18), transparent 60%),
+    linear-gradient(180deg, #090612 0%, #0d0920 45%, #08050f 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: linear-gradient(150deg, rgba(34, 19, 61, 0.62), rgba(16, 11, 33, 0.62));
+  border: 1px solid rgba(192, 132, 252, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.phone-glow {
+  box-shadow: 0 0 0 1px rgba(244, 114, 182, 0.2), 0 20px 60px -22px rgba(236, 72, 153, 0.4);
+}
