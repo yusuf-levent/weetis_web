@@ -1,20 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" fill="none" role="img" aria-label="Weetis V9 logo">
   <defs>
-    <linearGradient id="g" x1="18" y1="18" x2="162" y2="162" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1C46FF" />
-      <stop offset="0.5" stop-color="#8A17FF" />
-      <stop offset="1" stop-color="#FFB000" />
+    <linearGradient id="bg" x1="12" y1="12" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1050FF"/>
+      <stop offset="0.48" stop-color="#6D23FF"/>
+      <stop offset="0.72" stop-color="#FF6A00"/>
+      <stop offset="1" stop-color="#FFC300"/>
     </linearGradient>
-    <filter id="s" x="24" y="29" width="132" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#000" flood-opacity="0.35" />
-    </filter>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 98) rotate(90) scale(110)">
+      <stop offset="0" stop-color="#FF4C7B" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FF4C7B" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <rect x="8" y="8" width="164" height="164" rx="32" fill="url(#g)" />
+  <rect x="4" y="4" width="184" height="184" rx="42" fill="url(#bg)"/>
+  <rect x="4" y="4" width="184" height="184" rx="42" fill="url(#glow)"/>
 
-  <g filter="url(#s)" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M41 55L58 128L88 84L111 128L130 55" />
-    <path d="M88 84L74 102" />
-    <path d="M124 62L151 78L124 94V62Z" />
+  <g stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M46 58L78 130C80 135 88 135 90 130L119 76"/>
+    <path d="M108 58C121 46 139 51 143 67C146 80 139 92 126 95C116 98 108 93 103 85"/>
+    <path d="M126 95L116 116"/>
+    <path d="M139 47L161 60L139 73"/>
   </g>
 </svg>
