@@ -39,7 +39,7 @@ function App() {
 
           <header className="mb-10 flex flex-col items-start justify-between gap-4 border-b border-violet-300/15 pb-6 md:flex-row md:items-center">
             <div className="flex items-center gap-3">
-              <img src="/weetis-logo.svg" alt="Weetis logo" className="h-11 w-11 rounded-xl" />
+              <img src="/weetis-logo.png" alt="Weetis logo" className="h-11 w-11 rounded-xl" />
               <div>
                 <p className="font-display text-lg font-bold text-white">Weetis</p>
                 <p className="text-xs uppercase tracking-[0.22em] text-violet-200/70">Discovery-Commerce</p>
