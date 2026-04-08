@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import {
   ArrowRight,
   BadgeDollarSign,
@@ -13,19 +13,7 @@ import {
 } from 'lucide-react'
 
 function App() {
-  const [email, setEmail] = useState('')
-  const [joined, setJoined] = useState(false)
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-
-    if (!email.trim()) {
-      return
-    }
-
-    setJoined(true)
-    setEmail('')
-  }
+  const [state, handleSubmit] = useForm('xzdkwaqy')
 
   return (
     <main className="relative isolate overflow-hidden">
@@ -72,21 +60,35 @@ function App() {
                   <input
                     id="waitlist-email"
                     type="email"
+                    name="email"
                     required
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
                     placeholder="E-posta adresiniz"
                     className="h-12 w-full rounded-xl border border-transparent bg-slate-950/80 px-4 text-sm text-violet-50 placeholder:text-violet-200/45 outline-none transition focus:border-fuchsia-300/65"
                   />
-                  <button type="submit" className="cta-btn group inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 font-semibold text-white">
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="cta-btn group inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-70"
+                  >
                     Erken Erisim (Early Access)
                     <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 </div>
 
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                  className="mt-2 text-xs text-rose-300"
+                />
+                <ValidationError
+                  errors={state.errors}
+                  className="mt-2 text-xs text-rose-300"
+                />
+
                 <p className="mt-3 inline-flex items-center gap-2 text-xs text-violet-100/70">
-                  <CheckCircle2 size={14} className={joined ? 'text-emerald-300' : 'text-violet-300'} />
-                  {joined
+                  <CheckCircle2 size={14} className={state.succeeded ? 'text-emerald-300' : 'text-violet-300'} />
+                  {state.succeeded
                     ? 'Kaydiniz alindi. Erken erisim davetini e-posta ile paylasacagiz.'
                     : 'Sinirli kontenjanli beta davetleri sirayla gonderilecektir.'}
                 </p>
